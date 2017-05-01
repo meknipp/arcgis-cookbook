@@ -8,6 +8,7 @@ version          '3.0.0'
 
 depends          'windows'
 depends          'limits'
+depends          'ms_dotnet'
 
 supports         'windows'
 
