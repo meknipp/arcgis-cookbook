@@ -26,6 +26,7 @@ suites:
           }
         }
       }
+
   - name: arcgis-10.4.1
     run_list:
       - recipe[arcgis-desktop]
@@ -42,7 +43,8 @@ suites:
           }
         }
       }
- - name: arcgis-10.4
+
+  - name: arcgis-10.4
     run_list:
       - recipe[arcgis-desktop]
     attributes:
