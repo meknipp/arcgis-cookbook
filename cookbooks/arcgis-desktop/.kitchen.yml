@@ -1,0 +1,77 @@
+---
+driver:
+  name: vagrant
+  synced_folders:
+    - ["../Installers", "/Installers", "create: true, type: :nfs"]
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: windows_2012_r2
+
+suites:
+  - name: arcgis-10.5
+    run_list:
+      - recipe[arcgis-desktop]
+    attributes:
+      {
+        "arcgis":{
+          "version":"10.5",
+          "desktop":{
+            "setup":"C:\\Installers\\10.5\\Desktop\\Setup.exe",
+            "software_class":"Editor",
+            "esri_license_host": "licensehost",
+            "seat_preference":"Float",
+            "desktop_config":true
+          }
+        }
+      }
+  - name: arcgis-10.4.1
+    run_list:
+      - recipe[arcgis-desktop]
+    attributes:
+      {
+        "arcgis":{
+          "version":"10.4.1",
+          "desktop":{
+            "setup":"C:\\Installers\\10.4.1\\Desktop\\Setup.exe",
+            "software_class":"Editor",
+            "esri_license_host": "licensehost",
+            "seat_preference":"Float",
+            "desktop_config":true
+          }
+        }
+      }
+ - name: arcgis-10.4
+    run_list:
+      - recipe[arcgis-desktop]
+    attributes:
+      {
+        "arcgis":{
+          "version":"10.4",
+          "desktop":{
+            "setup":"C:\\Installers\\10.4\\Desktop\\Setup.exe",
+            "software_class":"Editor",
+            "esri_license_host": "licensehost",
+            "seat_preference":"Float",
+            "desktop_config":true
+          }
+        }
+      }
+
+  - name: arcgis-10.2.1
+    run_list:
+      - recipe[arcgis-desktop]
+    attributes:
+      {
+        "arcgis":{
+          "version":"10.2.1",
+          "desktop":{
+            "setup":"C:\\Installers\\10.2.1\\Desktop\\Setup.exe",
+            "software_class":"Editor",
+            "esri_license_host": "licensehost",
+            "seat_preference":"Float",
+            "desktop_config":true
+          }
+        }
+      }

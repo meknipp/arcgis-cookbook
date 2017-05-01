@@ -53,3 +53,4 @@ Servers
 target
 build
 *.launch
+cookbooks/Installers/
