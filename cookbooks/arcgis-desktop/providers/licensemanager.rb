@@ -45,7 +45,7 @@ end
 action :install do
   if node['platform'] == 'windows'
     cmd = @new_resource.setup
-    args = "/qb ADDLOCAL=ALL INSTALLDIR=\"#{@new_resource.install_dir}\" INSTALLDIR1=\"#{@new_resource.python_dir}\""
+    args = "/qb- ADDLOCAL=ALL INSTALLDIR=\"#{@new_resource.install_dir}\" INSTALLDIR1=\"#{@new_resource.python_dir}\""
 
     cmd = Mixlib::ShellOut.new("\"#{cmd}\" #{args}")
     cmd.run_command

@@ -27,9 +27,9 @@ end
 action :install do
   cmd = @new_resource.setup
   if @new_resource.seat_preference == 'Fixed'
-    args = "/qb ADDLOCAL=\"#{@new_resource.install_features}\" INSTALLDIR=\"#{@new_resource.install_dir}\" INSTALLDIR1=\"#{@new_resource.python_dir}\" DESKTOP_CONFIG=\"#{@new_resource.desktop_config}\" MODIFYFLEXDACL=\"#{@new_resource.modifyflexdacl}\""
+    args = "/qb- ADDLOCAL=\"#{@new_resource.install_features}\" INSTALLDIR=\"#{@new_resource.install_dir}\" INSTALLDIR1=\"#{@new_resource.python_dir}\" DESKTOP_CONFIG=\"#{@new_resource.desktop_config}\" MODIFYFLEXDACL=\"#{@new_resource.modifyflexdacl}\""
   else
-    args = "/qb ADDLOCAL=\"#{@new_resource.install_features}\" INSTALLDIR=\"#{@new_resource.install_dir}\" INSTALLDIR1=\"#{@new_resource.python_dir}\" ESRI_LICENSE_HOST=\"#{@new_resource.esri_license_host}\" SOFTWARE_CLASS=\"#{@new_resource.software_class}\" SEAT_PREFERENCE=\"#{@new_resource.seat_preference}\" DESKTOP_CONFIG=\"#{@new_resource.desktop_config}\" MODIFYFLEXDACL=\"#{@new_resource.modifyflexdacl}\""
+    args = "/qb- ADDLOCAL=\"#{@new_resource.install_features}\" INSTALLDIR=\"#{@new_resource.install_dir}\" INSTALLDIR1=\"#{@new_resource.python_dir}\" ESRI_LICENSE_HOST=\"#{@new_resource.esri_license_host}\" SOFTWARE_CLASS=\"#{@new_resource.software_class}\" SEAT_PREFERENCE=\"#{@new_resource.seat_preference}\" DESKTOP_CONFIG=\"#{@new_resource.desktop_config}\" MODIFYFLEXDACL=\"#{@new_resource.modifyflexdacl}\""
   end
 
   cmd = Mixlib::ShellOut.new("\"#{cmd}\" #{args}", { :timeout => 3600 })
