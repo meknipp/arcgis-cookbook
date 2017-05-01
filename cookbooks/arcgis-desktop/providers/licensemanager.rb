@@ -83,7 +83,7 @@ end
 action :uninstall do
   if node['platform'] == 'windows'
     cmd = 'msiexec'
-    args = "/qb /x #{product_code}"
+    args = "/qb- /x #{product_code}"
 
     cmd = Mixlib::ShellOut.new("\"#{cmd}\" #{args}")
     cmd.run_command
