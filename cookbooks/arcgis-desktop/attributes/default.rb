@@ -57,6 +57,8 @@ when 'windows'
   when '10.2.1'
     default['arcgis']['desktop']['product_code'] = '{8777990C-4F53-4782-9A38-E60343B5053D}'
     default['arcgis']['licensemanager']['product_code'] = '{94C02C9C-5015-4DC0-96B4-18FD04095FAC}'
+    default['arcgis']['vba']['setup'] = 'C:\\ArcGIS\\VBACompatibility\\Setup.msi'
+    default['arcgis']['vba']['product_code'] = '{85E1ACC2-D07E-47BB-A75E-D35E048B14B4}'
   else
     throw 'Unsupported ArcGIS version'
   end

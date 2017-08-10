@@ -39,3 +39,10 @@ arcgis_desktop_licensemanager 'Uninstall ArcGIS License Manager' do
   end
   action :uninstall
 end
+
+arcgis_desktop_vba 'Uninstall ArcGIS Desktop VBA Compatibility' do
+  setup node['arcgis']['vba']['setup']
+  product_code node['arcgis']['vba']['product_code']
+  only_if { Utils.product_installed?(node['arcgis']['vba']['product_code']) }
+  action :uninstall
+end
