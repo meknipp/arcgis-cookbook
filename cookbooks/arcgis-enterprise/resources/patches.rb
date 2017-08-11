@@ -1,8 +1,8 @@
 #
 # Cookbook Name:: arcgis-enterprise
-# Recipe:: sql_alias
+# Resource:: patches
 #
-# Copyright 2015 Esri
+# Copyright 2017 Esri
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,14 +17,9 @@
 # limitations under the License.
 #
 
-execute 'Create SQL Aliases' do
-  command ['PowerShell.exe',
-           '-file',
-           "\"#{::File.join(node['arcgis']['server']['install_dir'],
-                            "framework", "etc", "Create-SQLAliases.ps1")}\"",
-           '-server',
-           node['arcgis']['rds']['endpoint']].join(' ')
-  only_if { node['arcgis']['rds']['engine'] == 'sqlserver-se' &&
-           !node['arcgis']['rds']['endpoint'].nil? &&
-           !node['arcgis']['rds']['endpoint'].empty? }
+actions :install
+
+def initialize(*args)
+  super
+  @action = :install
 end
