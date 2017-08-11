@@ -18,10 +18,14 @@
 #
 
 
-actions :install, :uninstall
+actions :install, :installvbaof11, :installvbaof11i, :uninstall
 
 attribute :setup, :kind_of => String
+attribute :vbaof11, :kind_of => String
+attribute :vbaof11i, :kind_of => String
 attribute :product_code, :kind_of => String
+attribute :vbaof11_product_code, :kind_of => String
+attribute :vbaof11i_product_code, :kind_of => String
 
 def initialize(*args)
   super

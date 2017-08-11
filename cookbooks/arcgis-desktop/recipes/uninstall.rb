@@ -43,6 +43,10 @@ end
 arcgis_desktop_vba 'Uninstall ArcGIS Desktop VBA Compatibility' do
   setup node['arcgis']['vba']['setup']
   product_code node['arcgis']['vba']['product_code']
-  only_if { Utils.product_installed?(node['arcgis']['vba']['product_code']) }
+  vbaof11_product_code node['arcgis']['vba']['vbaof11_product_code']
+  vbaof11i_product_code node['arcgis']['vba']['vbaof11i_product_code']
+  only_if { Utils.product_installed?(node['arcgis']['vba']['product_code']) || 
+            Utils.product_installed?(node['arcgis']['vba']['vbaof11_product_code']) ||
+            Utils.product_installed?(node['arcgis']['vba']['vbaof11i_product_code'])  }
   action :uninstall
 end
