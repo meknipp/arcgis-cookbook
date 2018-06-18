@@ -27,3 +27,9 @@ arcgis_pro_pro 'Install ArcGIS Pro' do
   not_if { Utils.product_installed?(node['arcgis']['pro']['product_code']) }
   action :install
 end
+
+arcgis_pro_pro 'Authorize ArcGIS Pro' do
+  authorization_file node['arcgis']['pro']['authorization_file']
+  authorization_file_version node['arcgis']['pro']['authorization_file_version']
+  action :authorize
+end
