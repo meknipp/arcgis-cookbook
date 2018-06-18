@@ -40,6 +40,10 @@ when 'windows'
   default['arcgis']['licensemanager']['setup'] = 'C:\\ArcGIS\\LicenseManager\\Setup.exe'
   default['arcgis']['licensemanager']['lp-setup'] = 'C:\\ArcGIS\\LicenseManager\\SetupFiles\\setup.msi'
   default['arcgis']['licensemanager']['install_dir'] = ENV['ProgramFiles(x86)'] + '\\ArcGIS'
+  
+  default['arcgis']['vba']['setup'] = 'C:\\ArcGIS\\VBACompatibility\\Setup.msi'
+  default['arcgis']['vba']['vbaof11'] = 'C:\\ArcGIS\\VBACompatibility\\VBA\\VBAOF11.msi'
+  default['arcgis']['vba']['vbaof11i'] = 'C:\\ArcGIS\\VBACompatibility\\VBA\\1033\\VBAOF11i.msi'
 
   case node['arcgis']['desktop']['version']
   when '10.6'
@@ -60,6 +64,9 @@ when 'windows'
   when '10.2.1'
     default['arcgis']['desktop']['product_code'] = '{8777990C-4F53-4782-9A38-E60343B5053D}'
     default['arcgis']['licensemanager']['product_code'] = '{94C02C9C-5015-4DC0-96B4-18FD04095FAC}'
+    default['arcgis']['vba']['product_code'] = '{85E1ACC2-D07E-47BB-A75E-D35E048B14B4}'
+    default['arcgis']['vba']['vbaof11_product_code'] = '{FB97C283-1F3C-42D4-AE01-ADC1DC12F774}'
+    default['arcgis']['vba']['vbaof11i_product_code'] = '{A13D16C5-38A9-4D96-9647-59FCCAB12A85}'
   else
     throw 'Unsupported ArcGIS version'
   end
