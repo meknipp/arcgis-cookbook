@@ -46,6 +46,9 @@ when 'windows'
   default['arcgis']['vba']['vbaof11i'] = 'C:\\ArcGIS\\VBACompatibility\\VBA\\1033\\VBAOF11i.msi'
 
   case node['arcgis']['desktop']['version']
+  when '10.6.1'
+    default['arcgis']['desktop']['product_code'] = '{FA2E2CBC-0697-4C71-913E-8C65B5A611E8}'
+    default['arcgis']['licensemanager']['product_code'] = '{D6AF20B5-825F-44A9-915D-C2868CBD59F3}'
   when '10.6'
     default['arcgis']['desktop']['product_code'] = '{F8206086-367E-44E4-9E24-92E9E057A63D}'
     default['arcgis']['licensemanager']['product_code'] = '{D6AF20B5-825F-44A9-915D-C2868CBD59F3}'
